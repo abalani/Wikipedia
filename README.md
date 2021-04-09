@@ -25,7 +25,14 @@ export SELENIUM_CHROME_DRIVER="/Users/<your_user>/chromedriver"
 
 * Required maven dependencies should be pulled by reloading the project under maven
 
-```@CucumberOptions(features="src/test/resources/Features", glue = {"steps"}, monochrome = true, tags = "@ab")```
+```@CucumberOptions(features="src/test/resources/Features", glue = {"steps"}, monochrome = true, tags = "@smoke")```
+
+```  
+@smoke
+Scenario: Check content box headings are used as page headings
+  Given user is on the article page
+  Then user verifies content box headings match page headings 
+```
 
 We can execute the tests through Cucumber TestRunner class by editing tag names.
 The runner class is setup to execute any test with the tag name `@smoke`
